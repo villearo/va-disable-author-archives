@@ -10,6 +10,10 @@ License:        GPLv2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+
+/*
+ * Return 404 if author archive
+ */
 function va_disable_author_archives() {
     if ( is_author() ) {
         global $wp_query;
@@ -21,6 +25,7 @@ function va_disable_author_archives() {
 }
 remove_filter('template_redirect', 'redirect_canonical');
 add_action('template_redirect', 'va_disable_author_archives');
+
 
 /*
  * Return empty href
