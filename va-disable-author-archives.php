@@ -21,7 +21,7 @@ function va_disable_author_archives() {
         status_header(404);
 
         nocache_headers();
-        //include( get_query_template( '404' ) );
+        include( get_query_template( '404' ) );
         //die();
     } else {
         redirect_canonical();   
