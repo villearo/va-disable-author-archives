@@ -17,14 +17,18 @@ License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 function va_disable_author_archives() {
     if ( is_author() ) {
         global $wp_query;
-        $wp_query->set_404();
+//        $wp_query->set_404();
         status_header(404);
+
+        nocache_headers();
+        include( get_query_template( '404' ) );
+        die();
     } else {
         redirect_canonical();   
     }
 }
-remove_filter('template_redirect', 'redirect_canonical');
-add_action('template_redirect', 'va_disable_author_archives');
+//remove_filter('template_redirect', 'redirect_canonical');
+add_action('wp', 'va_disable_author_archives');
 
 
 /*
