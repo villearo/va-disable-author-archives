@@ -27,7 +27,7 @@ function va_disable_author_archives() {
         redirect_canonical();   
     }
 }
-//remove_filter('template_redirect', 'redirect_canonical');
+remove_filter('template_redirect', 'redirect_canonical');
 add_action('template_redirect', 'va_disable_author_archives');
 
 
