@@ -20,7 +20,7 @@ function va_disable_author_archives() {
         $wp_query->set_404();
         status_header(404);
 
-        //nocache_headers();
+        nocache_headers();
         //include( get_query_template( '404' ) );
         //die();
     } else {
