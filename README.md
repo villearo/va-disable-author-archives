@@ -1,0 +1,1 @@
+# va-disable-author-archives
